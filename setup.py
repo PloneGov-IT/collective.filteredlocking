@@ -3,9 +3,9 @@ import os
 
 version = '1.0.0'
 
-setup(name='rer.filteredlocking',
+setup(name='collective.filteredlocking',
       version=version,
-      description="A basic product that create a new permission athat allows to unlock locked objects",
+      description="A basic product that create a new permission that allows to unlock locked objects",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
@@ -19,7 +19,7 @@ setup(name='rer.filteredlocking',
       url='',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['rer'],
+      namespace_packages=['collective'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[

@@ -1,1 +1,1 @@
-<include package="rer.filteredlocking" file="overrides.zcml" />
+<include package="collective.filteredlocking" file="overrides.zcml" />
