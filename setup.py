@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0.0'
+version = '1.1.0'
 
 setup(name='collective.filteredlocking',
       version=version,
@@ -28,5 +28,7 @@ setup(name='collective.filteredlocking',
       ],
       entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )

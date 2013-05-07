@@ -1,8 +1,13 @@
 Changelog
 =========
 
+1.1.0 (Unreleased)
+------------------
+
+* z3c.autoinclude
+
 1.0.0 - Unreleased
-----------------
+------------------
 
 * Initial release
 
