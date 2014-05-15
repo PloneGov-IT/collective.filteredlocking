@@ -1,7 +1,8 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.1.1.dev0'
+version = '1.2.0.dev0'
+tests_require = ['plone.app.testing', ]
 
 setup(name='collective.filteredlocking',
       version=version,
@@ -28,6 +29,8 @@ setup(name='collective.filteredlocking',
       namespace_packages=['collective'],
       include_package_data=True,
       zip_safe=False,
+      tests_require=tests_require,
+      extras_require=dict(test=tests_require),
       install_requires=[
           'setuptools',
           'plone.locking',
