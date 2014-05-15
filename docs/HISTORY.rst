@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.0 (unreleased)
+1.2.0 (2014-05-15)
 ------------------
 
 - Fix to egg format [keul]
