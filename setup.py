@@ -5,17 +5,23 @@ version = '1.1.1.dev0'
 
 setup(name='collective.filteredlocking',
       version=version,
-      description="A basic product that create a new permission that allows to unlock locked objects",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      description="A new specific permission that allows unlock of Plone contents",
+      long_description=open("README.rst").read() + "\n" +
+                       open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
+        "Framework :: Plone",
+        "Framework :: Plone :: 4.0",
+        "Framework :: Plone :: 4.1",
+        "Framework :: Plone :: 4.2",
+        "Framework :: Plone :: 4.3",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='',
+      keywords='plone plonegov lock webdav',
       author='RedTurtle Technology',
-      author_email='sviluppoplone@redturtle.net',
+      author_email='sviluppoplone@redturtle.it',
       url='',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
@@ -24,7 +30,7 @@ setup(name='collective.filteredlocking',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
+          'plone.locking',
       ],
       entry_points="""
       # -*- Entry points: -*-

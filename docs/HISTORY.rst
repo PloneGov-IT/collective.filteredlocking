@@ -1,11 +1,12 @@
 Changelog
 =========
 
-1.1.1 (unreleased)
+1.2.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Fix to egg format [keul]
+- Proper package dependencies [keul]
+- Removed useless GS profiles [keul]
 
 1.1.0 (2013-06-24)
 ------------------
