@@ -12,4 +12,4 @@ PROJECTNAME = 'collective.filteredlocking'
 # not be visibile. This is the only way to not force this product to have a GS profile 
 security.declarePublic("CanUnlockObjects")
 CanUnlockObjects = "collective.filteredlocking: Can unlock objects"
-setDefaultRoles(CanUnlockObjects, ('Manager', 'Owner', ))
+setDefaultRoles(CanUnlockObjects, ('Manager', 'Owner', 'Editor', 'Site Administrator'))

@@ -1,16 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from zope.configuration import xmlconfig
-
-from plone.testing import z2
-
+from plone.app.testing import FunctionalTesting
+from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
-from plone.app.testing import IntegrationTesting
-from plone.app.testing import FunctionalTesting
-from plone.app.testing import applyProfile
-from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles
+from plone.testing import z2
+#from zope.configuration import xmlconfig
 
 
 class FilteredLockingLayer(PloneSandboxLayer):
@@ -20,9 +17,13 @@ class FilteredLockingLayer(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         # Load ZCML for this package
         import collective.filteredlocking
-        xmlconfig.file('configure.zcml',
-                       collective.filteredlocking,
-                       context=configurationContext)
+# Found no way to load override.xcml properly: see http://www.niteoweb.com/blog/load-overrides.zcml-in-plone.app.testing
+#        xmlconfig.file('configure.zcml',
+#                       collective.filteredlocking,
+#                       context=configurationContext)
+#        self.loadZCML(package=collective.filteredlocking)
+#        xmlconfig.includeOverrides(configurationContext, 'overrides.zcml', package=collective.filteredlocking)
+        self.loadZCML(name='overrides.zcml', package=collective.filteredlocking)
         z2.installProduct(app, 'collective.filteredlocking')
 
     def setUpPloneSite(self, portal):
