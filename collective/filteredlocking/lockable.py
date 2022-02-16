@@ -27,7 +27,7 @@ class FilteredTTWLockable(TTWLockable):
             if l['creator'] == userid:
                 return True
         return False
-    
+
     def _user_can_unlock(self):
         sm = getSecurityManager()
         return bool(sm.checkPermission(config.CanUnlockObjects, self.context))

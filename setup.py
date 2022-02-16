@@ -1,8 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.2.1.dev0'
-tests_require = ['plone.app.testing', ]
+version = '1.2.1.dev0'  #???
 
 setup(name='collective.filteredlocking',
       version=version,
@@ -12,11 +11,13 @@ setup(name='collective.filteredlocking',
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3.8",
         "Framework :: Plone",
         "Framework :: Plone :: 4.0",
         "Framework :: Plone :: 4.1",
         "Framework :: Plone :: 4.2",
         "Framework :: Plone :: 4.3",
+        "Framework :: Plone :: 5.2",
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
@@ -29,12 +30,18 @@ setup(name='collective.filteredlocking',
       namespace_packages=['collective'],
       include_package_data=True,
       zip_safe=False,
-      tests_require=tests_require,
-      extras_require=dict(test=tests_require),
       install_requires=[
           'setuptools',
           'plone.locking',
+          'plone.app.testing', #???
       ],
+      extras_require={
+          'test': [
+              'plone.app.testing[robot]',
+              'plone.app.robotframework',
+              'plone.app.contenttypes',
+          ],
+      },
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]

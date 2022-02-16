@@ -38,4 +38,27 @@ class BaseTestCase(unittest.TestCase):
         self.assertTrue(lockable._lock_is_mine())
         self.assertTrue(lockable.stealable())
 
-        
+    def test_different_editor_can_remove_my_lock(self):
+        portal = self.layer['portal']
+
+        login(portal, 'user1')
+        lockable = IRefreshableLockable(portal.document)
+        lockable.lock()
+
+        login(portal, 'user2')
+        lockable = IRefreshableLockable(portal.document)
+        self.assertTrue(lockable._user_can_unlock())
+        self.assertTrue(lockable.stealable())
+
+    def test_simple_member_cant_unlock(self):
+        # 
+        portal = self.layer['portal']
+
+        login(portal, 'user1')
+        lockable = IRefreshableLockable(portal.document)
+        lockable.lock()
+
+        login(portal, 'user3')
+        lockable = IRefreshableLockable(portal.document)
+        self.assertFalse(lockable._user_can_unlock())
+        self.assertFalse(lockable.stealable())

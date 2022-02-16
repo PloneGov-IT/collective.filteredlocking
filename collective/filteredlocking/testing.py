@@ -33,6 +33,8 @@ class FilteredLockingLayer(PloneSandboxLayer):
         setRoles(portal, 'user1', ['Member', 'Editor', ])
         acl_users.userFolderAddUser('user2', 'secret', ['Member'], [])
         setRoles(portal, 'user2', ['Member', 'Editor', ])
+        acl_users.userFolderAddUser('user3', 'secret', ['Member'], [])
+        setRoles(portal, 'user3', ['Member', ])
 
 
 FILTERED_LOCKING_FIXTURE = FilteredLockingLayer()
