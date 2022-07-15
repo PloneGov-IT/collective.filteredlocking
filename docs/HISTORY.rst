@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.2.1 (unreleased)
+2.0.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Python 3 support. Dropped support for Python 2.7 and Plone < 5.2.
+  [reflab]
 
 
 1.2.0 (2014-05-15)

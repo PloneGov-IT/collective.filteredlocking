@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import config
+from collective.filteredlocking import config
 
 
 def initialize(context):
